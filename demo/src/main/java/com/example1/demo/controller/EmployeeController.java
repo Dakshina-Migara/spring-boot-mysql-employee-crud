@@ -2,8 +2,6 @@ package com.example1.demo.controller;
 
 import com.example1.demo.dto.EmployeeDto;
 import com.example1.demo.service.EmployeeService;
-import com.example1.demo.service.impl.EmployeeServiceImpl;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.core.io.ByteArrayResource;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
@@ -12,7 +10,6 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 
-import java.nio.file.Paths;
 import java.util.List;
 
 @RestController
@@ -20,7 +17,6 @@ import java.util.List;
 public class EmployeeController {
     private final EmployeeService employeeService;
 
-    @Autowired
     public EmployeeController(EmployeeService employeeService){
         this.employeeService = employeeService;
     }
@@ -35,35 +31,35 @@ public class EmployeeController {
     @DeleteMapping("/delete/{id}")
     public ResponseEntity<Boolean> deleteEmployee(@PathVariable int id) {
         boolean deleted = employeeService.deleteEmployee(id);
-        return new ResponseEntity<>(deleted, HttpStatus.CREATED);
+        return new ResponseEntity<>(deleted, HttpStatus.OK);
     }
 
 
     @PutMapping("/update/{id}")
     public ResponseEntity<EmployeeDto> updateEmployee(@PathVariable int id ,@RequestBody EmployeeDto employeeDto) {
         EmployeeDto updatedEmployee = employeeService.updateEmployee(id , employeeDto);
-        return new ResponseEntity<>(updatedEmployee, HttpStatus.CREATED);
+        return new ResponseEntity<>(updatedEmployee, HttpStatus.OK);
     }
 
 
     @GetMapping("/getAll")
     public ResponseEntity<List<EmployeeDto>> getAllEmployee() {
         List<EmployeeDto> getAllEmployee = employeeService.getAllEmployee();
-        return new ResponseEntity<>(getAllEmployee, HttpStatus.CREATED);
+        return new ResponseEntity<>(getAllEmployee, HttpStatus.OK);
     }
 
 
     @GetMapping("/getByNic/{nic}")
     public ResponseEntity<EmployeeDto> getEmployeeByNic(@PathVariable String nic) {
         EmployeeDto getEmployeeByNic = employeeService.getEmployeeByNic(nic);
-        return new ResponseEntity<>(getEmployeeByNic, HttpStatus.CREATED);
+        return new ResponseEntity<>(getEmployeeByNic, HttpStatus.OK);
     }
 
 
-    @GetMapping("/getById{id}")
+    @GetMapping("/getById/{id}")
     public ResponseEntity<EmployeeDto> getEmployeeById(@PathVariable int id) {
         EmployeeDto getEmployeeById = employeeService.getEmployeeById(id);
-        return new ResponseEntity<>(getEmployeeById, HttpStatus.CREATED);
+        return new ResponseEntity<>(getEmployeeById, HttpStatus.OK);
     }
 
     @PostMapping("/uploadPhoto/{id}")

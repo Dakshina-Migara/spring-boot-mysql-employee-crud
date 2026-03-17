@@ -7,7 +7,6 @@ import com.example1.demo.entity.User;
 import com.example1.demo.repository.UserRepo;
 import com.example1.demo.security.JwtUtil;
 import com.example1.demo.service.UserRegisterService;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.BadCredentialsException;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
@@ -25,7 +24,6 @@ public class UserRegisterServiceImpl implements UserRegisterService {
     private final AuthenticationManager authenticationManager;
     private final UserDetailsService userDetailsService;
 
-    @Autowired
     public UserRegisterServiceImpl(UserRepo userRepo,
                                    PasswordEncoder passwordEncoder,
                                    JwtUtil jwtUtil,

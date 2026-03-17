@@ -4,7 +4,6 @@ import com.example1.demo.dto.EmployeeDto;
 import com.example1.demo.entity.Employee;
 import com.example1.demo.repository.EmployeeRepo;
 import com.example1.demo.service.EmployeeService;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartFile;
 
@@ -21,7 +20,6 @@ public class EmployeeServiceImpl implements EmployeeService {
 
     private final EmployeeRepo employeeRepo;
 
-    @Autowired
     public EmployeeServiceImpl(EmployeeRepo employeeRepo){
         this.employeeRepo = employeeRepo;
     }
