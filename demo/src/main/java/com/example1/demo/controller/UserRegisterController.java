@@ -1,10 +1,8 @@
 package com.example1.demo.controller;
 
-import com.example1.demo.dto.Login;
 import com.example1.demo.dto.LoginResponce;
 import com.example1.demo.dto.UserDto;
 import com.example1.demo.service.UserRegisterService;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -17,7 +15,6 @@ public class UserRegisterController {
 
     private final UserRegisterService userRegisterService;
 
-    @Autowired
     public UserRegisterController(UserRegisterService userRegisterService) {
         this.userRegisterService = userRegisterService;
     }
