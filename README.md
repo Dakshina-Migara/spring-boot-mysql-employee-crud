@@ -1,7 +1,8 @@
 # Spring Boot Employee Management System
 
-A Spring Boot–based RESTful API for managing employees using CRUD operations.  
-This project uses **Spring Data JPA**, **DTO pattern**, and follows a clean layered architecture.
+> A RESTful API for Employee Management built with Java, Spring Boot, Spring Data JPA, and MySQL.
+
+This project is a complete backend service for managing employee records, featuring a clean layered architecture, DTO pattern implementation, and RESTful endpoints for full CRUD operations.
 
 ---
 
